@@ -45,6 +45,11 @@ const updateFavorite = async (req, res) => {
   }
   res.json(result);
 };
+
+const getCountries = async (req, res) => {
+  const result = await CountryDB.find({});
+  res.json(result);
+};
 module.exports = {
   createContact: ctrl(createContact),
   deleteContact: ctrl(deleteContact),
@@ -52,4 +57,5 @@ module.exports = {
   getOneContact: ctrl(getOneContact),
   updateContact: ctrl(updateContact),
   updateFavorite: ctrl(updateFavorite),
+  getCountries: ctrl(getCountries),
 };

@@ -7,6 +7,7 @@ const {
   createContact,
   updateContact,
   updateFavorite,
+  getCountries,
 } = require('../controllers/contactsControllers');
 
 const { schemas } = require('../db/contactsSchema.js');
