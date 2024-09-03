@@ -2,15 +2,16 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
-const initMongoDB = require('./db/initMongoDB');
-const contactsRouter = require('./routes/contactsRouter');
+const countriesRouter = require('./routes/countriesRouter');
 const { configDotenv } = require('dotenv');
+
 const PORT = configDotenv().parsed.PORT;
 const startServer = () => {
   app.use(morgan('tiny'));
   app.use(cors());
   app.use(express.json());
-  app.use('/api/contacts', contactsRouter);
+  app.use('/api/world', countriesRouter);
+
   app.use((_, res) => {
     res
       .status(404)
@@ -21,7 +22,7 @@ const startServer = () => {
     res.status(status).json({ message });
   });
   app.listen(3000, () => {
-    console.log('Server is on and OK. Use our API on port: 3000');
+    console.log('Server is on and OK. Use our API on port: ', PORT);
   });
 };
 module.exports = startServer;
