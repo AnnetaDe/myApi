@@ -13,9 +13,7 @@ const startServer = () => {
   app.use('/api/world', countriesRouter);
 
   app.use((_, res) => {
-    res
-      .status(404)
-      .json({ message: 'you are at http://localhost:3000/hello.html' });
+    res.status(404).json({ message: 'you are using my api' });
   });
   app.use((err, req, res, next) => {
     const { status = 500, message = 'Server error' } = err;
