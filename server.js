@@ -22,7 +22,7 @@ const startServer = () => {
     res.status(status).json({ message });
   });
   app.listen(3000, () => {
-    console.log('Server is on and OK. Use our API on port: ', PORT);
+    console.log('Server is on and OK.:', PORT);
   });
 };
 module.exports = startServer;
