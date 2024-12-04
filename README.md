@@ -1,1 +1,1 @@
-# goit-node-rest-api
+# node-rest-api for mock
